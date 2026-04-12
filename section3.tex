@@ -1,0 +1,50 @@
+\section{AI智能体工具的推广使用路径}
+
+前两节讨论了 AI 智能体在资料归集、文件重命名、缺报核验等场景中的具体作用，但若要将这类能力从个体尝试转化为可复制的办公方法，还需要回答一个更现实的问题，即基层岗位应当如何选择、安装、配置并稳定使用相关工具。与传统办公软件不同，AI 智能体往往依赖命令行环境、模型接口配置以及一定程度的项目规则约束，因此其推广不应停留在“知道有这个工具”，而应形成一套可操作、可迁移、可维护的使用路径。
+
+需要说明的是，本文这里讨论的工具，并不意味着它们构成当前 AI 智能体工具的主流全貌，而只是笔者在实际接触过程中认为较有代表性工具。
+
+\subsection{Claude Code 的安装与 GLM 模型平替配置}
+
+在笔者的实际接触中，Claude Code 是较早进入使用视野的一类工具。其特点在于交互方式较清晰，规则文件思路也比较适合形成固定工作流。如果将其用于资料归集、批量处理、规则复用等任务，较容易从一次性的尝试逐步沉淀为可重复执行的方法。
+
+从安装角度看，Claude Code 依赖 Node.js 与 npm 环境，因此在使用前需要先补齐 Node.js，再执行安装命令。本文这里给出的安装和 GLM 模型平替配置方式，除参考相关文档外，也部分参考了博主：\lstinline|"杰森的效率工坊"| 的视频内容。\cite{youtube_obsidian_claude_skill_2024,zai_claude_code_2026}。
+
+\begin{codeexample}[htbp]
+   \caption{Claude Code 安装与环境变量配置示例}
+   \begin{lstlisting}[style=cmdview]
+# 安装 Claude Code（需先具备 Node.js 与 npm 环境）
+npm install -g @anthropic-ai/claude-code
+
+# Windows 环境变量配置示例
+setx ANTHROPIC_BASE_URL "https://open.bigmodel.cn/api/anthropic"
+setx ANTHROPIC_AUTH_TOKEN "你的_GLM_API_KEY"
+setx ANTHROPIC_MODEL "glm-4.7"
+
+# 进入工作目录后启动
+cd D:\工作\CNPC\片区\新源片区\综合岗
+claude
+\end{lstlisting}
+\end{codeexample}
+
+\subsection{CodeBuddy 的安装与使用}
+
+除 Claude Code 外，CodeBuddy 也是值得纳入推广讨论的一类工具。根据腾讯云官方资料，CodeBuddy 由腾讯推出，提供 AI 对话、代码补全、工程理解、智能评审、单元测试和 MCP 等能力，并支持多种 IDE 与命令行工作方式\cite{codebuddy_product_2026}。对于国内用户而言，这类工具的现实优势在于本土化服务链路相对完整，安全系数更高，账号获取以及网络可达性往往更容易落地。
+
+CodeBuddy CLI 同样支持通过 npm 安装。根据其快速入门文档，Windows、macOS 和 Linux 环境均可使用，且推荐在安装完成后进入目标项目目录启动工具\cite{codebuddy_quickstart_2026}。这说明它不仅适用于代码开发场景，也可以迁移到规则明确、目录清晰的经营分析资料处理工作中。若使用者不偏好 CLI（Command Line Interface，命令行界面）方式，也可以直接下载 CodeBuddy IDE\footnote{\url{https://www.codebuddy.ai/ide}}。相较而言，CLI 更适合执行连续指令、批量任务和复杂流程，整体能力通常更灵活；而 IDE 更强调图形化界面与交互友好性，更便于初学者理解和上手。
+
+\begin{codeexample}[htbp]
+   \caption{CodeBuddy 的基础安装与启动示例}
+   \begin{lstlisting}[style=cmdview]
+# 安装 CodeBuddy Code
+npm install -g @tencent-ai/codebuddy-code
+
+# 进入项目目录并启动
+cd D:\工作\CNPC\片区\新源片区\综合岗
+codebuddy
+\end{lstlisting}
+\end{codeexample}
+
+相较于需要额外兼容接口配置的使用方式，CodeBuddy 的推广障碍通常更低一些，更适合作为普通员工的入门型选择。在单位内部开展小范围试点时，这类工具也更便于统一安装说明、统一演示流程和统一答疑口径。当然，这并不意味着应只保留一种工具，而是说明在过渡阶段，可以根据不同岗位条件形成多工具并行、但规则模板相对统一的使用格局。
+
+总体来看，AI 智能体工具的推广，本质上并不只是安装哪个软件的问题，而是如何将零散经验沉淀为共享方法的问题。对基层经营管理岗位而言，真正值得复制的不是某一条安装命令，而是围绕这些工具逐步形成的目录约定、提示词模板、输出格式、校验流程和规则文件。只有当这些方法沉淀下来，AI 智能体才可能从个人效率工具，进一步转化为可复制的数智化办公能力。

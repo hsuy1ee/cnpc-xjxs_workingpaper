@@ -1,0 +1,49 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.fmt
+*.fot
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+*.xdv
+
+# Generated documents
+*.pdf
+
+# Local templates not intended for this repo
+cnpc_xsy-cn.tex
+
+# TeX editors / OS noise
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store
+
+# 模板
+cnpc_xsy.cls
+cnpc_xsy-cn.tex
+reference.bib
+
+# font
+font/
